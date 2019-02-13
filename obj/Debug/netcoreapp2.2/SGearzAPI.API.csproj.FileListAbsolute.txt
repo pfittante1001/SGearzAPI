@@ -1,0 +1,14 @@
+C:\Users\pfitt\Desktop\Repos\SGearzAPI\SGearzAPI.API\bin\Debug\netcoreapp2.2\SGearzAPI.API.deps.json
+C:\Users\pfitt\Desktop\Repos\SGearzAPI\SGearzAPI.API\bin\Debug\netcoreapp2.2\SGearzAPI.API.runtimeconfig.json
+C:\Users\pfitt\Desktop\Repos\SGearzAPI\SGearzAPI.API\bin\Debug\netcoreapp2.2\SGearzAPI.API.runtimeconfig.dev.json
+C:\Users\pfitt\Desktop\Repos\SGearzAPI\SGearzAPI.API\bin\Debug\netcoreapp2.2\SGearzAPI.API.dll
+C:\Users\pfitt\Desktop\Repos\SGearzAPI\SGearzAPI.API\bin\Debug\netcoreapp2.2\SGearzAPI.API.pdb
+C:\Users\pfitt\Desktop\Repos\SGearzAPI\SGearzAPI.API\obj\Debug\netcoreapp2.2\SGearzAPI.API.csprojAssemblyReference.cache
+C:\Users\pfitt\Desktop\Repos\SGearzAPI\SGearzAPI.API\obj\Debug\netcoreapp2.2\SGearzAPI.API.csproj.CoreCompileInputs.cache
+C:\Users\pfitt\Desktop\Repos\SGearzAPI\SGearzAPI.API\obj\Debug\netcoreapp2.2\SGearzAPI.API.RazorAssemblyInfo.cache
+C:\Users\pfitt\Desktop\Repos\SGearzAPI\SGearzAPI.API\obj\Debug\netcoreapp2.2\SGearzAPI.API.RazorAssemblyInfo.cs
+C:\Users\pfitt\Desktop\Repos\SGearzAPI\SGearzAPI.API\obj\Debug\netcoreapp2.2\SGearzAPI.API.AssemblyInfoInputs.cache
+C:\Users\pfitt\Desktop\Repos\SGearzAPI\SGearzAPI.API\obj\Debug\netcoreapp2.2\SGearzAPI.API.AssemblyInfo.cs
+C:\Users\pfitt\Desktop\Repos\SGearzAPI\SGearzAPI.API\obj\Debug\netcoreapp2.2\SGearzAPI.API.RazorTargetAssemblyInfo.cache
+C:\Users\pfitt\Desktop\Repos\SGearzAPI\SGearzAPI.API\obj\Debug\netcoreapp2.2\SGearzAPI.API.dll
+C:\Users\pfitt\Desktop\Repos\SGearzAPI\SGearzAPI.API\obj\Debug\netcoreapp2.2\SGearzAPI.API.pdb
