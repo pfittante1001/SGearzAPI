@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SGearzAPI.API.Data;
 
 namespace SGearzAPI.API.Controllers
 {
-
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CustomersController : ControllerBase
@@ -27,7 +28,7 @@ namespace SGearzAPI.API.Controllers
 
             return Ok(customers);
         }
-
+        [AllowAnonymous]
         // GET api/values/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCustomer(int id)
