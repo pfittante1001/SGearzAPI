@@ -21,8 +21,9 @@ namespace SGearzAPI.API.Controllers
 
         }
         // GET api/values
+        [AllowAnonymous]
         [HttpGet]
-        public async Task<IActionResult> GetCustomers()
+        public async Task<IActionResult> Get()
         {
             var customers = await _context.Customers.ToListAsync();
 
@@ -31,7 +32,7 @@ namespace SGearzAPI.API.Controllers
         [AllowAnonymous]
         // GET api/values/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetCustomer(int id)
+        public async Task<IActionResult> Get(int id)
         {
              var customer = await _context.Customers.FirstOrDefaultAsync(x => x.Id == id);
 
