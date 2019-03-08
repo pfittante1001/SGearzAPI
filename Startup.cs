@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
@@ -35,9 +36,12 @@ namespace SGearzAPI.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddAutoMapper();
+            services.AddScoped<ISGearzRepository, CustomerRepository>();
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddCors();
+            services.AddTransient<SeedData>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
@@ -53,7 +57,7 @@ namespace SGearzAPI.API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, SeedData seeder)
         {
             if (env.IsDevelopment())
             {
@@ -64,7 +68,7 @@ namespace SGearzAPI.API
                 app.UseExceptionHandler(builder => {
                     builder.Run(async context => {
                         context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-
+              
                         var error = context.Features.Get<IExceptionHandlerFeature>();
                         if(error != null){
 
@@ -78,6 +82,8 @@ namespace SGearzAPI.API
             }
 
             // app.UseHttpsRedirection();
+            // seeder.SeedUsers();
+            // seeder.SeedCustomers();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyOrigin().AllowAnyHeader());
             app.UseAuthentication();
             app.UseMvc();

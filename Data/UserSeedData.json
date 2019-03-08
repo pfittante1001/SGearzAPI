@@ -1,0 +1,52 @@
+[
+    {
+      "Username": "Chaney",
+      "Password": "password",
+      "Created": "2017-01-29"
+    },
+    {
+      "Username": "Louis",
+      "Password": "password",
+      "Created": "2017-07-28"
+    },
+    {
+      "Username": "French",
+      "Password": "password",
+      "Created": "2017-02-02"
+    },
+    {
+      "Username": "Walter",
+      "Password": "password",
+      "Created": "2017-03-28"
+    },
+    {
+      "Username": "Adam",
+      "Password": "password",
+      "Created": "2017-03-15"
+    },
+  {
+      "Username": "Nieves",
+      "Password": "password",
+      "Created": "2017-02-05"
+    },
+    {
+      "Username": "Julianne",
+      "Password": "password",
+      "Created": "2017-06-14"
+    },
+    {
+      "Username": "Jordan",
+      "Password": "password",
+      "Created": "2017-04-15"
+    },
+    {
+      "Username": "Colleen",
+      "Password": "password",
+      "Created": "2017-05-11"
+    },
+    {
+      "Username": "Kara",
+      "Password": "password",
+      "Created": "2017-05-20"
+    }
+]
