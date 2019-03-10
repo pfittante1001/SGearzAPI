@@ -9,7 +9,7 @@ namespace SGearzAPI.API.Helper
         public AutoMapper()
         {
             CreateMap<Customer, CustomerForDetailDTO>();
-            CreateMap<Customer, CustomerForLIstDTO>();
+            CreateMap<Customer, CustomerForListDTO>();
             CreateMap<CustAddress, CustAddressDTO>();
         }
     }

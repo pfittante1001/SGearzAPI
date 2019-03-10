@@ -82,8 +82,7 @@ namespace SGearzAPI.API
             }
 
             // app.UseHttpsRedirection();
-            // seeder.SeedUsers();
-            // seeder.SeedCustomers();
+            //seeder.SeedUsers();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyOrigin().AllowAnyHeader());
             app.UseAuthentication();
             app.UseMvc();

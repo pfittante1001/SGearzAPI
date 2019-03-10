@@ -1,52 +1,222 @@
 [
-    {
-      "Username": "Chaney",
-      "Password": "password",
-      "Created": "2017-01-29"
-    },
-    {
-      "Username": "Louis",
-      "Password": "password",
-      "Created": "2017-07-28"
-    },
-    {
-      "Username": "French",
-      "Password": "password",
-      "Created": "2017-02-02"
-    },
-    {
-      "Username": "Walter",
-      "Password": "password",
-      "Created": "2017-03-28"
-    },
-    {
-      "Username": "Adam",
-      "Password": "password",
-      "Created": "2017-03-15"
-    },
   {
-      "Username": "Nieves",
-      "Password": "password",
-      "Created": "2017-02-05"
-    },
-    {
-      "Username": "Julianne",
-      "Password": "password",
-      "Created": "2017-06-14"
-    },
-    {
-      "Username": "Jordan",
-      "Password": "password",
-      "Created": "2017-04-15"
-    },
-    {
-      "Username": "Colleen",
-      "Password": "password",
-      "Created": "2017-05-11"
-    },
-    {
-      "Username": "Kara",
-      "Password": "password",
-      "Created": "2017-05-20"
-    }
+    "UserName": "MJensen",
+    "Password": "password",
+    "Created": "2017-06-17",
+    "FirstName": "Marisa",
+    "LastName": "Jensen",
+    "Gender": "m",
+    "Email": "marisajensen@moreganic.com",
+    "Phone": "+1 (935) 451-3708",
+    "Chest": 42.3593,
+    "Sleeve": 30.1009,
+    "Height": 57.5218,
+    "CustAddresses": [
+      {
+        "Address1": 456,
+        "Address2": "Lawrence Street",
+        "City": "Corriganville",
+        "State": "Arizona",
+        "Zip": 28511
+      }
+    ]
+  },
+  {
+    "UserName": "LWade",
+    "Password": "password",
+    "Created": "2017-08-01",
+    "FirstName": "Luann",
+    "LastName": "Wade",
+    "Gender": "m",
+    "Email": "luannwade@moreganic.com",
+    "Phone": "+1 (985) 441-3034",
+    "Chest": 43.0173,
+    "Sleeve": 32.3612,
+    "Height": 65.5254,
+    "CustAddresses": [
+      {
+        "Address1": 917,
+        "Address2": "Overbaugh Place",
+        "City": "Rosburg",
+        "State": "Illinois",
+        "Zip": 30795
+      }
+    ]
+  },
+  {
+    "UserName": "CHogan",
+    "Password": "password",
+    "Created": "2017-06-06",
+    "FirstName": "Colon",
+    "LastName": "Hogan",
+    "Gender": "m",
+    "Email": "colonhogan@moreganic.com",
+    "Phone": "+1 (991) 559-3471",
+    "Chest": 38.7776,
+    "Sleeve": 32.9667,
+    "Height": 63.5673,
+    "CustAddresses": [
+      {
+        "Address1": 453,
+        "Address2": "Covert Street",
+        "City": "Vincent",
+        "State": "Michigan",
+        "Zip": 73553
+      }
+    ]
+  },
+  {
+    "UserName": "RSellers",
+    "Password": "password",
+    "Created": "2017-01-29",
+    "FirstName": "Roberta",
+    "LastName": "Sellers",
+    "Gender": "m",
+    "Email": "robertasellers@moreganic.com",
+    "Phone": "+1 (977) 516-2598",
+    "Chest": 39.8478,
+    "Sleeve": 32.8663,
+    "Height": 60.2671,
+    "CustAddresses": [
+      {
+        "Address1": 958,
+        "Address2": "Ford Street",
+        "City": "Loveland",
+        "State": "Delaware",
+        "Zip": 84915
+      }
+    ]
+  },
+  {
+    "UserName": "GPage",
+    "Password": "password",
+    "Created": "2017-07-08",
+    "FirstName": "Gertrude",
+    "LastName": "Page",
+    "Gender": "m",
+    "Email": "gertrudepage@moreganic.com",
+    "Phone": "+1 (923) 531-2104",
+    "Chest": 45.3764,
+    "Sleeve": 30.1131,
+    "Height": 60.7538,
+    "CustAddresses": [
+      {
+        "Address1": 164,
+        "Address2": "Sullivan Street",
+        "City": "Carlton",
+        "State": "Alaska",
+        "Zip": 56347
+      }
+    ]
+  },
+  {
+    "UserName": "WBarker",
+    "Password": "password",
+    "Created": "2017-01-04",
+    "FirstName": "Walton",
+    "LastName": "Barker",
+    "Gender": "m",
+    "Email": "waltonbarker@moreganic.com",
+    "Phone": "+1 (908) 410-2213",
+    "Chest": 38.9994,
+    "Sleeve": 31.4098,
+    "Height": 58.2098,
+    "CustAddresses": [
+      {
+        "Address1": 209,
+        "Address2": "Dinsmore Place",
+        "City": "Linganore",
+        "State": "New York",
+        "Zip": 10038
+      }
+    ]
+  },
+  {
+    "UserName": "FVang",
+    "Password": "password",
+    "Created": "2017-06-20",
+    "FirstName": "Fleming",
+    "LastName": "Vang",
+    "Gender": "m",
+    "Email": "flemingvang@moreganic.com",
+    "Phone": "+1 (808) 445-3027",
+    "Chest": 34.8578,
+    "Sleeve": 30.0131,
+    "Height": 62.0869,
+    "CustAddresses": [
+      {
+        "Address1": 163,
+        "Address2": "Applegate Court",
+        "City": "Stewartville",
+        "State": "South Dakota",
+        "Zip": 98998
+      }
+    ]
+  },
+  {
+    "UserName": "MHall",
+    "Password": "password",
+    "Created": "2017-01-07",
+    "FirstName": "Mann",
+    "LastName": "Hall",
+    "Gender": "m",
+    "Email": "mannhall@moreganic.com",
+    "Phone": "+1 (963) 531-2531",
+    "Chest": 34.6694,
+    "Sleeve": 30.2043,
+    "Height": 57.6758,
+    "CustAddresses": [
+      {
+        "Address1": 680,
+        "Address2": "Clifton Place",
+        "City": "Beason",
+        "State": "West Virginia",
+        "Zip": 35969
+      }
+    ]
+  },
+  {
+    "UserName": "MRussell",
+    "Password": "password",
+    "Created": "2017-05-05",
+    "FirstName": "Mindy",
+    "LastName": "Russell",
+    "Gender": "m",
+    "Email": "mindyrussell@moreganic.com",
+    "Phone": "+1 (943) 473-3447",
+    "Chest": 42.5873,
+    "Sleeve": 32.0917,
+    "Height": 62.6593,
+    "CustAddresses": [
+      {
+        "Address1": 536,
+        "Address2": "Stone Avenue",
+        "City": "Ezel",
+        "State": "Hawaii",
+        "Zip": 51567
+      }
+    ]
+  },
+  {
+    "UserName": "VBarnes",
+    "Password": "password",
+    "Created": "2017-04-25",
+    "FirstName": "Valenzuela",
+    "LastName": "Barnes",
+    "Gender": "m",
+    "Email": "valenzuelabarnes@moreganic.com",
+    "Phone": "+1 (892) 482-2750",
+    "Chest": 34.9854,
+    "Sleeve": 32.3351,
+    "Height": 56.1559,
+    "CustAddresses": [
+      {
+        "Address1": 641,
+        "Address2": "Quentin Road",
+        "City": "Tooleville",
+        "State": "Oklahoma",
+        "Zip": 63952
+      }
+    ]
+  }
 ]

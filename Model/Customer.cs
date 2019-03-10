@@ -1,11 +1,17 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using SGearzAPI.API.DTO;
 
 namespace SGearzAPI.API.Model
 {
     public class Customer
     {
         public int Id { get; set; }
+        public string UserName { get; set; }    
+        public byte[] PasswordHash { get; set; }
+        public byte[] PasswordSalt { get; set; }  
+        public DateTime Created { get; set; } 
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Phone { get; set; }
@@ -19,7 +25,5 @@ namespace SGearzAPI.API.Model
         public double Sleeve { get; set; }
         public double Shoulders { get; set; }
         public ICollection<CustAddress> CustAddresses { get; set; }
-        public int UserID { get; set; }
-        public User User { get; set; }
     }
 }

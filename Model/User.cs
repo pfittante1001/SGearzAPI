@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace SGearzAPI.API.Model
 {
@@ -9,6 +10,5 @@ namespace SGearzAPI.API.Model
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }  
         public DateTime Created { get; set; } 
-        public Customer Customer { get; set; }
-    }
+        public ICollection<Customer> Customers { get; set; }    }
 }

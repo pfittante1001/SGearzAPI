@@ -13,18 +13,18 @@ namespace SGearzAPI.API.Data
             _context = context;
 
         }
-        public async Task<User> Login(string username, string password)
+        public async Task<Customer> Login(string username, string password)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(x => x.UserName == username);
-            if(user == null){
+            var customer = await _context.Customers.FirstOrDefaultAsync(x => x.UserName == username);
+            if(customer == null){
                 return null;
             }
 
-            if(!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
+            if(!VerifyPasswordHash(password, customer.PasswordHash, customer.PasswordSalt))
             return null;
             
             
-            return user;
+            return customer;
         }
 
         private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
@@ -41,19 +41,19 @@ namespace SGearzAPI.API.Data
             return true;
         }
 
-        public async Task<User> Register(User user, string password)
+        public async Task<Customer> Register(Customer customer, string password)
         {
             byte[] passwordHash, passwordSalt;
 
             CreatePasswordHash(password, out passwordHash, out passwordSalt);
             
-            user.PasswordHash = passwordHash;
-            user.PasswordSalt = passwordSalt;
+            customer.PasswordHash = passwordHash;
+            customer.PasswordSalt = passwordSalt;
 
-            await _context.Users.AddAsync(user);
+            await _context.Customers.AddAsync(customer);
             await _context.SaveChangesAsync();
 
-            return user;
+            return customer;
         }
 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
@@ -65,9 +65,9 @@ namespace SGearzAPI.API.Data
             }
         }
 
-        public async Task<bool> UserExists(string username)
+        public async Task<bool> CustomerExists(string username)
         {
-            if(await _context.Users.AnyAsync(x => x.UserName == username))
+            if(await _context.Customers.AnyAsync(x => x.UserName == username))
                 
             return true;
             

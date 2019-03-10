@@ -17,7 +17,9 @@ namespace SGearzAPI.API.Data
          public DbSet<Supplier> Suppliers { get; set; }
          public DbSet<Category> Categories { get; set; }
          public DbSet<ProductImage> ProductImages { get; set; }
-        public DbSet<User> Users { get; set; }
+         public DbSet<CustAddress> CustAddresses { get; set; }
+         public DbSet<SupplierAddress> SupplierAddresses { get; set; }
+        //public DbSet<User> Users { get; set; }
 
         
     }

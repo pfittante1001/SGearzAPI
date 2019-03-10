@@ -27,39 +27,39 @@ namespace SGearzAPI.API.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register(UserForRegisterDTO userForRegister)
+        public async Task<IActionResult> Register(UserForRegisterDTO custForRegister)
         {
 
-            userForRegister.UserName = userForRegister.UserName.ToLower();
+            custForRegister.UserName = custForRegister.UserName.ToLower();
 
-            if (await _repo.UserExists(userForRegister.UserName))
+            if (await _repo.CustomerExists(custForRegister.UserName))
                 return BadRequest("Username already exists");
 
-            var userToCreate = new User
+            var custToCreate = new Customer
             {
-                UserName = userForRegister.UserName
+                UserName = custForRegister.UserName
             };
 
-            var createdUser = await _repo.Register(userToCreate, userForRegister.Password);
+            var createdUser = await _repo.Register(custToCreate, custForRegister.Password);
 
             return StatusCode(201);
 
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(UserForLoginDTO userForLogin)
+        public async Task<IActionResult> Login(UserForLoginDTO custForLogin)
         {
 
-            var userFromRepo = await _repo.Login(userForLogin.UserName.ToLower(), userForLogin.Password);
-            if (userFromRepo == null)
+            var custFromRepo = await _repo.Login(custForLogin.UserName.ToLower(), custForLogin.Password);
+            if (custFromRepo == null)
             {
                 return Unauthorized();
             }
 
             var claims = new[]
             {
-                new Claim(ClaimTypes.NameIdentifier, userFromRepo.Id.ToString()),
-                new Claim(ClaimTypes.NameIdentifier, userFromRepo.UserName)
+                new Claim(ClaimTypes.NameIdentifier, custFromRepo.Id.ToString()),
+                new Claim(ClaimTypes.NameIdentifier, custFromRepo.UserName)
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSetting:Token").Value));
 

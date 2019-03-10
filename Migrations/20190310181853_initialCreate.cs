@@ -21,6 +21,34 @@ namespace SGearzAPI.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Customers",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    UserName = table.Column<string>(nullable: true),
+                    PasswordHash = table.Column<byte[]>(nullable: true),
+                    PasswordSalt = table.Column<byte[]>(nullable: true),
+                    Created = table.Column<DateTime>(nullable: false),
+                    FirstName = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true),
+                    Phone = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
+                    Gender = table.Column<char>(nullable: false),
+                    Neck = table.Column<int>(nullable: false),
+                    Waist = table.Column<double>(nullable: false),
+                    Height = table.Column<double>(nullable: false),
+                    Chest = table.Column<double>(nullable: false),
+                    Hip = table.Column<double>(nullable: false),
+                    Sleeve = table.Column<double>(nullable: false),
+                    Shoulders = table.Column<double>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Customers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "OrderDetails",
                 columns: table => new
                 {
@@ -59,19 +87,30 @@ namespace SGearzAPI.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "CustAddresses",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    UserName = table.Column<string>(nullable: true),
-                    PasswordHash = table.Column<byte[]>(nullable: true),
-                    PasswordSalt = table.Column<byte[]>(nullable: true),
-                    Created = table.Column<DateTime>(nullable: false)
+                    Address1 = table.Column<string>(nullable: true),
+                    Address2 = table.Column<string>(nullable: true),
+                    City = table.Column<string>(nullable: true),
+                    State = table.Column<string>(nullable: true),
+                    Zip = table.Column<string>(nullable: true),
+                    Country = table.Column<string>(nullable: true),
+                    IsShipping = table.Column<bool>(nullable: false),
+                    IsBilling = table.Column<bool>(nullable: false),
+                    CustomerID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.PrimaryKey("PK_CustAddresses", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CustAddresses_Customers_CustomerID",
+                        column: x => x.CustomerID,
+                        principalTable: "Customers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -105,7 +144,7 @@ namespace SGearzAPI.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SupplierAddress",
+                name: "SupplierAddresses",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -121,44 +160,13 @@ namespace SGearzAPI.API.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SupplierAddress", x => x.Id);
+                    table.PrimaryKey("PK_SupplierAddresses", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SupplierAddress_Suppliers_SupplierId",
+                        name: "FK_SupplierAddresses_Suppliers_SupplierId",
                         column: x => x.SupplierId,
                         principalTable: "Suppliers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Customers",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true),
-                    Phone = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
-                    Gender = table.Column<char>(nullable: false),
-                    Neck = table.Column<int>(nullable: false),
-                    Waist = table.Column<double>(nullable: false),
-                    Height = table.Column<double>(nullable: false),
-                    Chest = table.Column<double>(nullable: false),
-                    Hip = table.Column<double>(nullable: false),
-                    Sleeve = table.Column<double>(nullable: false),
-                    Shoulders = table.Column<double>(nullable: false),
-                    UserID = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Customers", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Customers_Users_UserID",
-                        column: x => x.UserID,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -183,43 +191,10 @@ namespace SGearzAPI.API.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "CustAddress",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Address1 = table.Column<string>(nullable: true),
-                    Address2 = table.Column<string>(nullable: true),
-                    City = table.Column<string>(nullable: true),
-                    State = table.Column<string>(nullable: true),
-                    Zip = table.Column<string>(nullable: true),
-                    Country = table.Column<string>(nullable: true),
-                    IsShipping = table.Column<bool>(nullable: false),
-                    IsBilling = table.Column<bool>(nullable: false),
-                    CustomerID = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CustAddress", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CustAddress_Customers_CustomerID",
-                        column: x => x.CustomerID,
-                        principalTable: "Customers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
             migrationBuilder.CreateIndex(
-                name: "IX_CustAddress_CustomerID",
-                table: "CustAddress",
+                name: "IX_CustAddresses_CustomerID",
+                table: "CustAddresses",
                 column: "CustomerID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Customers_UserID",
-                table: "Customers",
-                column: "UserID",
-                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProductImages_ProductID",
@@ -237,15 +212,15 @@ namespace SGearzAPI.API.Migrations
                 column: "SupplierID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SupplierAddress_SupplierId",
-                table: "SupplierAddress",
+                name: "IX_SupplierAddresses_SupplierId",
+                table: "SupplierAddresses",
                 column: "SupplierId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CustAddress");
+                name: "CustAddresses");
 
             migrationBuilder.DropTable(
                 name: "OrderDetails");
@@ -257,16 +232,13 @@ namespace SGearzAPI.API.Migrations
                 name: "ProductImages");
 
             migrationBuilder.DropTable(
-                name: "SupplierAddress");
+                name: "SupplierAddresses");
 
             migrationBuilder.DropTable(
                 name: "Customers");
 
             migrationBuilder.DropTable(
                 name: "Products");
-
-            migrationBuilder.DropTable(
-                name: "Users");
 
             migrationBuilder.DropTable(
                 name: "Categories");

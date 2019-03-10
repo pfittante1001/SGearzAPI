@@ -14,7 +14,6 @@ namespace SGearzAPI.API.Model
         public string Country { get; set; }
         public bool IsShipping { get; set; }
         public bool IsBilling { get; set; }
-
         public Customer Customer { get; set; }
         public int CustomerID { get; set; }
         

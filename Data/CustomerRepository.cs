@@ -25,15 +25,15 @@ namespace SGearzAPI.API.Data
 
         public async Task<Customer> GetCustomer(int id)
         {
-            var user = await _context.Customers.FirstOrDefaultAsync(u => u.Id == id);
-            // var user = await _context.Users.Include(p => p.Photos).FirstOrDefaultAsync(u => u.Id == id);
+            //var user = await _context.Customers.FirstOrDefaultAsync(u => u.Id == id);
+            var user = await _context.Customers.Include(p => p.CustAddresses).FirstOrDefaultAsync(u => u.Id == id);
            return user;
         }
 
         public async Task<IEnumerable<Customer>> GetCustomers()
         {
-             var user = await _context.Customers.ToListAsync();
-             // var user = await _context.Users.Include(p => p.Photos).ToListAsync();
+            //  var user = await _context.Customers.ToListAsync();
+             var user = await _context.Customers.Include(p => p.CustAddresses).ToListAsync();
              return user;
 
         }

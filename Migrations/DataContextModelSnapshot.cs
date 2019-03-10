@@ -55,7 +55,7 @@ namespace SGearzAPI.API.Migrations
 
                     b.HasIndex("CustomerID");
 
-                    b.ToTable("CustAddress");
+                    b.ToTable("CustAddresses");
                 });
 
             modelBuilder.Entity("SGearzAPI.API.Model.Customer", b =>
@@ -64,6 +64,8 @@ namespace SGearzAPI.API.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<double>("Chest");
+
+                    b.Property<DateTime>("Created");
 
                     b.Property<string>("Email");
 
@@ -79,20 +81,21 @@ namespace SGearzAPI.API.Migrations
 
                     b.Property<int>("Neck");
 
+                    b.Property<byte[]>("PasswordHash");
+
+                    b.Property<byte[]>("PasswordSalt");
+
                     b.Property<string>("Phone");
 
                     b.Property<double>("Shoulders");
 
                     b.Property<double>("Sleeve");
 
-                    b.Property<int>("UserID");
+                    b.Property<string>("UserName");
 
                     b.Property<double>("Waist");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UserID")
-                        .IsUnique();
 
                     b.ToTable("Customers");
                 });
@@ -202,25 +205,7 @@ namespace SGearzAPI.API.Migrations
 
                     b.HasIndex("SupplierId");
 
-                    b.ToTable("SupplierAddress");
-                });
-
-            modelBuilder.Entity("SGearzAPI.API.Model.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<DateTime>("Created");
-
-                    b.Property<byte[]>("PasswordHash");
-
-                    b.Property<byte[]>("PasswordSalt");
-
-                    b.Property<string>("UserName");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Users");
+                    b.ToTable("SupplierAddresses");
                 });
 
             modelBuilder.Entity("SGearzAPI.API.Model.CustAddress", b =>
@@ -228,14 +213,6 @@ namespace SGearzAPI.API.Migrations
                     b.HasOne("SGearzAPI.API.Model.Customer", "Customer")
                         .WithMany("CustAddresses")
                         .HasForeignKey("CustomerID")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("SGearzAPI.API.Model.Customer", b =>
-                {
-                    b.HasOne("SGearzAPI.API.Model.User", "User")
-                        .WithOne("Customer")
-                        .HasForeignKey("SGearzAPI.API.Model.Customer", "UserID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

@@ -47,7 +47,7 @@ namespace SGearzAPI.API.Controllers
         public async Task<IActionResult> GetCustomers()
         {
             var customers = await _repo.GetCustomers();
-            var customersToReturn = _mapper.Map<IEnumerable<CustomerForLIstDTO>>(customers);
+            var customersToReturn = _mapper.Map<IEnumerable<CustomerForListDTO>>(customers);
 
             return Ok(customersToReturn);
         }

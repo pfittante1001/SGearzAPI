@@ -13,36 +13,19 @@ namespace SGearzAPI.API.Data
             _context = context;
         }
 
-        public void SeedCustomers() {
-            var custData = System.IO.File.ReadAllText("Data/CustomerSeedData.json");
-            var customers = JsonConvert.DeserializeObject<List<Customer>>(custData);
-            foreach (var customer in customers)
-            {
-                customer.FirstName = customer.FirstName;
-                customer.LastName = customer.LastName;
-                customer.Email = customer.Email;
-                customer.Phone = customer.Phone;
-                customer.UserID = customer.UserID;
-
-                _context.Customers.Add(customer);
-            }
-
-            _context.SaveChanges();
-        }
         public void SeedUsers() {
-            var userData = System.IO.File.ReadAllText("Data/UserSeedData.json");
-            var users = JsonConvert.DeserializeObject<List<User>>(userData);
-            foreach (var user in users)
+            var custData = System.IO.File.ReadAllText("Data/UserSeedData.json");
+            var customers = JsonConvert.DeserializeObject<List<Customer>>(custData);
+            foreach (var cust in customers)
             {
                 byte[] passwordHash, passwordSalt;
                 CreatePasswordHash("password", out passwordHash, out passwordSalt);
                 
-                    user.PasswordHash = passwordHash;
-                    user.PasswordSalt = passwordSalt;
-                    user.UserName = user.UserName.ToLower();
-                    user.Created = user.Created;
-
-                    _context.Users.Add(user);
+                    cust.PasswordHash = passwordHash;
+                    cust.PasswordSalt = passwordSalt;
+                    cust.UserName = cust.UserName.ToLower();
+                    
+                    _context.Customers.Add(cust);
                 
             }
             _context.SaveChanges();

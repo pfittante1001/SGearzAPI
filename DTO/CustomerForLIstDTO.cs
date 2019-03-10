@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using SGearzAPI.API.Model;
 
 namespace SGearzAPI.API.DTO
 {
-    public class CustomerForLIstDTO
+    public class CustomerForListDTO
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
@@ -15,6 +16,6 @@ namespace SGearzAPI.API.DTO
         public double Hip { get; set; }
         public double Sleeve { get; set; }
         public double Shoulders { get; set; }
-         public ICollection<CustAddressDTO> CustAddresses { get; set; }
+        
     }
 }
