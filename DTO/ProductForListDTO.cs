@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
+using SGearzAPI.API.Model;
 
-namespace SGearzAPI.API.Model
+namespace SGearzAPI.API.DTO
 {
-    public class Product
+    public class ProductForListDTO
     {
-        public int Id { get; set; }
+        
         public string ProductName { get; set; }
         public string ProductDescription { get; set; } 
         public string Size { get; set; }    
@@ -25,11 +26,5 @@ namespace SGearzAPI.API.Model
         public DateTime DateListed { get; set; }       
         public ICollection<ProductImage> ProductImages { get; set; }
         public ICollection<SupplierAddress> SupplierAddresses { get; set; }
-        public Supplier Supplier { get; set; }
-        public int? SupplierID { get; set; }
-        
-        public Category Category { get; set; } 
-        public int? CateoryID { get; set; }
-        
     }
 }

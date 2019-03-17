@@ -11,6 +11,7 @@ namespace SGearzAPI.API.Helper
             CreateMap<Customer, CustomerForDetailDTO>();
             CreateMap<Customer, CustomerForListDTO>();
             CreateMap<CustAddress, CustAddressDTO>();
+            CreateMap<Product, ProductForListDTO>();
         }
     }
 }

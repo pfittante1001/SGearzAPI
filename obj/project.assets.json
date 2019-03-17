@@ -12474,11 +12474,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pfitt\\Desktop\\Repos\\SGearzAPI\\sgearzapi.api\\SGearzAPI.API.csproj",
+      "projectUniqueName": "C:\\Users\\pfitt\\Desktop\\Repos\\SGearzAPI\\sgearzapi\\SGearzAPI.API.csproj",
       "projectName": "SGearzAPI.API",
-      "projectPath": "C:\\Users\\pfitt\\Desktop\\Repos\\SGearzAPI\\sgearzapi.api\\SGearzAPI.API.csproj",
+      "projectPath": "C:\\Users\\pfitt\\Desktop\\Repos\\SGearzAPI\\sgearzapi\\SGearzAPI.API.csproj",
       "packagesPath": "C:\\Users\\pfitt\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pfitt\\Desktop\\Repos\\SGearzAPI\\sgearzapi.api\\obj\\",
+      "outputPath": "C:\\Users\\pfitt\\Desktop\\Repos\\SGearzAPI\\sgearzapi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

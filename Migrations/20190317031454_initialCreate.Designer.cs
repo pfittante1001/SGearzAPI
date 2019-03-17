@@ -9,7 +9,7 @@ using SGearzAPI.API.Data;
 namespace SGearzAPI.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190310181853_initialCreate")]
+    [Migration("20190317031454_initialCreate")]
     partial class initialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,7 +23,11 @@ namespace SGearzAPI.API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("CategoryImageUrl");
+
                     b.Property<string>("CategoryName");
+
+                    b.Property<string>("Description");
 
                     b.HasKey("Id");
 
@@ -107,9 +111,25 @@ namespace SGearzAPI.API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int?>("CustomerID");
+
+                    b.Property<float>("Frieght");
+
                     b.Property<DateTime>("OderDate");
 
+                    b.Property<DateTime>("OrderDate");
+
+                    b.Property<string>("OrderNumber");
+
+                    b.Property<DateTime>("RequiredDate");
+
+                    b.Property<DateTime>("ShipDate");
+
+                    b.Property<string>("TransactionStatus");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("CustomerID");
 
                     b.ToTable("Orders");
                 });
@@ -119,7 +139,33 @@ namespace SGearzAPI.API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<DateTime>("BillDate");
+
+                    b.Property<string>("Color");
+
+                    b.Property<float>("Discount");
+
+                    b.Property<bool>("IsComplete");
+
+                    b.Property<int?>("OrderID");
+
+                    b.Property<float>("Price");
+
+                    b.Property<int?>("ProductID");
+
+                    b.Property<int>("Quantity");
+
+                    b.Property<DateTime>("ShipDate");
+
+                    b.Property<string>("Size");
+
+                    b.Property<float>("Total");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("OrderID");
+
+                    b.HasIndex("ProductID");
 
                     b.ToTable("OrderDetails");
                 });
@@ -129,21 +175,49 @@ namespace SGearzAPI.API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("CategoryID");
+                    b.Property<string>("AvaiableSize");
+
+                    b.Property<string>("AvailableColor");
+
+                    b.Property<int?>("CategoryId");
+
+                    b.Property<int?>("CateoryID");
+
+                    b.Property<string>("Color");
 
                     b.Property<DateTime>("DateListed");
 
+                    b.Property<bool>("DiscountAvailable");
+
                     b.Property<bool>("IsUsed");
 
-                    b.Property<string>("ProductDesc");
+                    b.Property<float>("MSRP");
+
+                    b.Property<bool>("ProductAvailable");
+
+                    b.Property<string>("ProductDescription");
 
                     b.Property<string>("ProductName");
 
-                    b.Property<int>("SupplierID");
+                    b.Property<int>("QuantityPerUnit");
+
+                    b.Property<int>("ReOrderLevel");
+
+                    b.Property<string>("Size");
+
+                    b.Property<int?>("SupplierID");
+
+                    b.Property<float>("UnitPrice");
+
+                    b.Property<float>("UnitWeight");
+
+                    b.Property<int>("UnitsInStock");
+
+                    b.Property<int>("UnitsOnOrder");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryID");
+                    b.HasIndex("CategoryId");
 
                     b.HasIndex("SupplierID");
 
@@ -155,9 +229,9 @@ namespace SGearzAPI.API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<byte[]>("Image");
-
                     b.Property<string>("ImageName");
+
+                    b.Property<string>("ImgUrl");
 
                     b.Property<bool>("IsMain");
 
@@ -175,7 +249,23 @@ namespace SGearzAPI.API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("ContactFName");
+
+                    b.Property<string>("ContactLName");
+
+                    b.Property<bool>("CurrentOrder");
+
+                    b.Property<string>("DiscountType");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("PaymentMethods");
+
+                    b.Property<string>("Phone");
+
                     b.Property<string>("SupplierName");
+
+                    b.Property<string>("WebSiteUrl");
 
                     b.HasKey("Id");
 
@@ -197,15 +287,19 @@ namespace SGearzAPI.API.Migrations
 
                     b.Property<bool>("IsMain");
 
+                    b.Property<int?>("ProductId");
+
                     b.Property<string>("State");
 
-                    b.Property<int?>("SupplierId");
+                    b.Property<int?>("SupplierID");
 
                     b.Property<string>("Zip");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SupplierId");
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("SupplierID");
 
                     b.ToTable("SupplierAddresses");
                 });
@@ -218,17 +312,33 @@ namespace SGearzAPI.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("SGearzAPI.API.Model.Order", b =>
+                {
+                    b.HasOne("SGearzAPI.API.Model.Customer", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerID");
+                });
+
+            modelBuilder.Entity("SGearzAPI.API.Model.OrderDetail", b =>
+                {
+                    b.HasOne("SGearzAPI.API.Model.Order", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderID");
+
+                    b.HasOne("SGearzAPI.API.Model.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductID");
+                });
+
             modelBuilder.Entity("SGearzAPI.API.Model.Product", b =>
                 {
                     b.HasOne("SGearzAPI.API.Model.Category", "Category")
                         .WithMany("Products")
-                        .HasForeignKey("CategoryID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CategoryId");
 
                     b.HasOne("SGearzAPI.API.Model.Supplier", "Supplier")
                         .WithMany("Products")
-                        .HasForeignKey("SupplierID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("SupplierID");
                 });
 
             modelBuilder.Entity("SGearzAPI.API.Model.ProductImage", b =>
@@ -241,9 +351,13 @@ namespace SGearzAPI.API.Migrations
 
             modelBuilder.Entity("SGearzAPI.API.Model.SupplierAddress", b =>
                 {
-                    b.HasOne("SGearzAPI.API.Model.Supplier")
+                    b.HasOne("SGearzAPI.API.Model.Product")
+                        .WithMany("SupplierAddresses")
+                        .HasForeignKey("ProductId");
+
+                    b.HasOne("SGearzAPI.API.Model.Supplier", "Supplier")
                         .WithMany("SupplierAddress")
-                        .HasForeignKey("SupplierId");
+                        .HasForeignKey("SupplierID");
                 });
 #pragma warning restore 612, 618
         }

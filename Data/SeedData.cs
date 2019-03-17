@@ -31,6 +31,31 @@ namespace SGearzAPI.API.Data
             _context.SaveChanges();
         }
 
+        public void SeedCategory() {
+            var prodData = System.IO.File.ReadAllText("Data/ProductSeedData.json");
+            var products = JsonConvert.DeserializeObject<List<Category>>(prodData);
+            foreach (var prod in products)
+            {      
+                       
+                    _context.Categories.Add(prod);
+                
+            }
+            _context.SaveChanges();
+        }
+
+        public void SeedSuppliers() {
+            var suppData = System.IO.File.ReadAllText("Data/SupplierSeedData.json");
+            var suppliers = JsonConvert.DeserializeObject<List<Supplier>>(suppData);
+            foreach (var supp in suppliers)
+            {      
+                       
+                    _context.Suppliers.Add(supp);
+                
+            }
+            _context.SaveChanges();
+        }
+
+
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             using(var hmac = new System.Security.Cryptography.HMACSHA512())

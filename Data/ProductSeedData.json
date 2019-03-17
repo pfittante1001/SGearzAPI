@@ -1,0 +1,226 @@
+[
+  {
+    "CategoryImageUrl": "https://randomuser.me/api/portraits/med/men/65.jpg",
+    "Description": "Esse proident sunt laboris qui commodo minim do ex ad est tempor commodo qui.",
+    "CategoryName": "pants",
+    "Products": [
+      {
+        "ProductAvailable": true,
+        "DiscountAvailable": false,
+        "UnitPrice": 11.08,
+        "MSRP": 12,
+        "QuantityPerUnit": 34,
+        "UnitsOnOrder": 35,
+        "UnitsInStock": 26,
+        "ReOrderLevel": 8,
+        "UnitWeight": 15.2073,
+        "Color": "blue",
+        "Size": "S",
+        "ProductName": "Shoes",
+        "ProductDescription": "Culpa non commodo excepteur minim nisi fugiat dolore cupidatat proident.",
+        "AvailableSize": "M",
+        "AvailableColor": "green",
+        "IsUsed": false,
+        "ProductImages": [
+          {
+            "ImageName": "MENS BETTER THAN NAKED&trade; JACKET",
+            "IsMain": false,
+            "ImgUrl": "http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/mens-\t\t\t\tbetter-than-naked-jacket-AVMH_LC9_hero.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CategoryImageUrl": "https://randomuser.me/api/portraits/med/men/65.jpg",
+    "Description": "Lorem Lorem dolor quis sit cillum.",
+    "CategoryName": "parts",
+    "Products": [
+      {
+        "ProductAvailable": false,
+        "DiscountAvailable": false,
+        "UnitPrice": 11.37,
+        "MSRP": 27.32,
+        "QuantityPerUnit": 15,
+        "UnitsOnOrder": 33,
+        "UnitsInStock": 27,
+        "ReOrderLevel": 39,
+        "UnitWeight": 42.519,
+        "Color": "blue",
+        "Size": "S",
+        "ProductName": "Shoes",
+        "ProductDescription": "Labore pariatur amet ex eu officia in aliquip voluptate eu.",
+        "AvailableSize": "S",
+        "AvailableColor": "brown",
+        "IsUsed": true,
+        "ProductImages": [
+          {
+            "ImageName": "MENS BETTER THAN NAKED&trade; JACKET",
+            "IsMain": false,
+            "ImgUrl": "http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/mens-\t\t\t\tbetter-than-naked-jacket-AVMH_LC9_hero.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CategoryImageUrl": "https://randomuser.me/api/portraits/med/men/65.jpg",
+    "Description": "Ea nulla adipisicing sint laboris.",
+    "CategoryName": "shirt",
+    "Products": [
+      {
+        "ProductAvailable": false,
+        "DiscountAvailable": true,
+        "UnitPrice": 30.9,
+        "MSRP": 26.09,
+        "QuantityPerUnit": 11,
+        "UnitsOnOrder": 5,
+        "UnitsInStock": 5,
+        "ReOrderLevel": 15,
+        "UnitWeight": 40.5886,
+        "Color": "green",
+        "Size": "M",
+        "ProductName": "Pants",
+        "ProductDescription": "Duis nisi nulla minim ut dolor et officia ea.",
+        "AvailableSize": "S",
+        "AvailableColor": "green",
+        "IsUsed": true,
+        "ProductImages": [
+          {
+            "ImageName": "MENS BETTER THAN NAKED&trade; JACKET",
+            "IsMain": false,
+            "ImgUrl": "http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/mens-\t\t\t\tbetter-than-naked-jacket-AVMH_LC9_hero.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CategoryImageUrl": "https://randomuser.me/api/portraits/med/men/65.jpg",
+    "Description": "Veniam proident sit sunt labore non quis excepteur adipisicing labore ex incididunt aliquip occaecat dolor.",
+    "CategoryName": "parts",
+    "Products": [
+      {
+        "ProductAvailable": false,
+        "DiscountAvailable": false,
+        "UnitPrice": 37.9,
+        "MSRP": 6.67,
+        "QuantityPerUnit": 9,
+        "UnitsOnOrder": 5,
+        "UnitsInStock": 15,
+        "ReOrderLevel": 20,
+        "UnitWeight": 43.3768,
+        "Color": "green",
+        "Size": "S",
+        "ProductName": "Shoes",
+        "ProductDescription": "Pariatur aliquip incididunt ex aliqua Lorem laborum eu anim velit deserunt minim fugiat ad.",
+        "AvailableSize": "M",
+        "AvailableColor": "brown",
+        "IsUsed": false,
+        "ProductImages": [
+          {
+            "ImageName": "MENS BETTER THAN NAKED&trade; JACKET",
+            "IsMain": true,
+            "ImgUrl": "http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/mens-\t\t\t\tbetter-than-naked-jacket-AVMH_LC9_hero.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CategoryImageUrl": "https://randomuser.me/api/portraits/med/men/65.jpg",
+    "Description": "Ad voluptate amet aliqua est in ipsum cupidatat proident incididunt.",
+    "CategoryName": "parts",
+    "Products": [
+      {
+        "ProductAvailable": true,
+        "DiscountAvailable": false,
+        "UnitPrice": 28.45,
+        "MSRP": 28,
+        "QuantityPerUnit": 18,
+        "UnitsOnOrder": 28,
+        "UnitsInStock": 3,
+        "ReOrderLevel": 4,
+        "UnitWeight": 35.4905,
+        "Color": "brown",
+        "Size": "L",
+        "ProductName": "Shoes",
+        "ProductDescription": "Ipsum anim cillum commodo cillum ex mollit labore labore labore.",
+        "AvailableSize": "L",
+        "AvailableColor": "green",
+        "IsUsed": false,
+        "ProductImages": [
+          {
+            "ImageName": "MENS BETTER THAN NAKED&trade; JACKET",
+            "IsMain": false,
+            "ImgUrl": "http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/mens-\t\t\t\tbetter-than-naked-jacket-AVMH_LC9_hero.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CategoryImageUrl": "https://randomuser.me/api/portraits/med/men/65.jpg",
+    "Description": "Non et ut ea ullamco dolore.",
+    "CategoryName": "shirt",
+    "Products": [
+      {
+        "ProductAvailable": false,
+        "DiscountAvailable": true,
+        "UnitPrice": 25.95,
+        "MSRP": 10.21,
+        "QuantityPerUnit": 15,
+        "UnitsOnOrder": 12,
+        "UnitsInStock": 39,
+        "ReOrderLevel": 4,
+        "UnitWeight": 29.5634,
+        "Color": "green",
+        "Size": "S",
+        "ProductName": "Shirt",
+        "ProductDescription": "Irure veniam ipsum nisi ipsum nisi non ad aute aute.",
+        "AvailableSize": "L",
+        "AvailableColor": "brown",
+        "IsUsed": false,
+        "ProductImages": [
+          {
+            "ImageName": "MENS BETTER THAN NAKED&trade; JACKET",
+            "IsMain": true,
+            "ImgUrl": "http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/mens-\t\t\t\tbetter-than-naked-jacket-AVMH_LC9_hero.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CategoryImageUrl": "https://randomuser.me/api/portraits/med/men/65.jpg",
+    "Description": "Ex commodo labore amet et sunt aute excepteur magna labore labore eiusmod.",
+    "CategoryName": "pants",
+    "Products": [
+      {
+        "ProductAvailable": true,
+        "DiscountAvailable": true,
+        "UnitPrice": 10.28,
+        "MSRP": 17.25,
+        "QuantityPerUnit": 17,
+        "UnitsOnOrder": 30,
+        "UnitsInStock": 6,
+        "ReOrderLevel": 6,
+        "UnitWeight": 46.95,
+        "Color": "blue",
+        "Size": "L",
+        "ProductName": "Pants",
+        "ProductDescription": "Aute ut eu ut aliquip sit.",
+        "AvailableSize": "L",
+        "AvailableColor": "blue",
+        "IsUsed": true,
+        "ProductImages": [
+          {
+            "ImageName": "MENS BETTER THAN NAKED&trade; JACKET",
+            "IsMain": true,
+            "ImgUrl": "http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/mens-\t\t\t\tbetter-than-naked-jacket-AVMH_LC9_hero.png"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -12,5 +12,7 @@ namespace SGearzAPI.API.Model
         public string Zip { get; set; }
         public string Country { get; set; }
         public bool IsMain  { get; set; }
+        public Supplier Supplier { get; set; }
+        public int? SupplierID { get; set; }
     }
 }

@@ -21,6 +21,7 @@ using Microsoft.IdentityModel.Tokens;
 using SGearzAPI.API.Data;
 using SGearzAPI.API.Helper;
 
+
 namespace SGearzAPI.API
 {
     public class Startup
@@ -38,6 +39,7 @@ namespace SGearzAPI.API
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddAutoMapper();
             services.AddScoped<ISGearzRepository, CustomerRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddCors();
@@ -54,6 +56,9 @@ namespace SGearzAPI.API
 
                 };
             });
+            services.AddMvc().AddJsonOptions(
+            options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+        );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -82,7 +87,9 @@ namespace SGearzAPI.API
             }
 
             // app.UseHttpsRedirection();
-            //seeder.SeedUsers();
+            // seeder.SeedSuppliers();
+            // seeder.SeedUsers();
+            // seeder.SeedCategory();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyOrigin().AllowAnyHeader());
             app.UseAuthentication();
             app.UseMvc();
